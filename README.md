@@ -1,4 +1,4 @@
-# **Projeto Angular CLI - Dashboard e Movie List**
+# **Golden Raspberry Awards **
 
 Este projeto foi desenvolvido em Angular CLI para criar uma aplicação interativa com dois componentes principais: **Dashboard** e **Movie List**. Ele consome a API pública `https://challenge.outsera.tech/movies` para exibir informações sobre filmes e seus vencedores.
 
