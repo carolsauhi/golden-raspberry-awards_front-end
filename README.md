@@ -96,22 +96,10 @@ src/
 
 O projeto consome a API `https://challenge.outsera.tech/movies` para obter os dados. As principais funcionalidades são:
 
-### **Endpoints Utilizados**
-1. **Todos os filmes**:
+### **Endpoint Utilizado**
+**Todos os filmes**:
    - Endpoint: `https://challenge.outsera.tech/movies`
    - Método: `GET`
-
-2. **Anos com múltiplos vencedores**:
-   - Parâmetro: `?projection=years-with-multiple-winners`
-
-3. **Top 3 estúdios com mais vitórias**:
-   - Parâmetro: `?projection=studios-with-win-count`
-
-4. **Produtores com maior e menor intervalo entre vitórias**:
-   - Parâmetro: `?projection=max-min-win-interval-for-producers`
-
-5. **Filtragem por vencedor e ano**:
-   - Parâmetros: `?winner=true&year=<ANO>`
 
 ---
 
