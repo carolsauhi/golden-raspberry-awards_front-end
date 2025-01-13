@@ -1,0 +1,50 @@
+/* Centraliza o conteúdo */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0;
+  min-height: 100vh; /* Garante que o conteúdo preencha a altura da janela */
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4; /* Fundo suave */
+}
+
+/* Contêiner principal */
+.movie-list-container {
+  width: 90%;
+  max-width: 1200px; /* Limita a largura máxima */
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Tabela */
+.movie-list-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  padding: 8px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+/* Campo de filtro */
+.filter-input, .filter-select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}

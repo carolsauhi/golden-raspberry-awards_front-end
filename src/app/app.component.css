@@ -1,0 +1,71 @@
+
+body {
+  font-family: 'Times New Roman', Times, serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.app-header {
+  background-color: #333; 
+  color: white; 
+  padding: 1rem;
+  font-family: 'Times New Roman', Times, serif; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+  position: sticky; 
+  top: 0;
+  z-index: 1000; 
+}
+
+.header-content h1 {
+  margin: 0;
+  font-size: 1.5rem; 
+}
+
+.main-container {
+  display: flex;
+  margin-top: 1rem; 
+}
+
+.sidebar {
+  flex-shrink: 0;
+  width: 200px; 
+  background-color: #f8f8f8;
+  height: calc(100vh - 80px); 
+  position: sticky;
+  top: 80px; 
+}
+
+.main-content {
+  flex: 1;
+  padding: 1rem;
+  margin-left: 200px; 
+}
+
+
+@media (max-width: 768px) {
+  .app-layout {
+    flex-direction: column; 
+  }
+
+  .sidebar {
+    position: relative;
+    width: 80%; 
+    height: auto; 
+  }
+
+  .main-content {
+    margin-left: 0; 
+    width: 100%; 
+  }
+}
+
+
+@media (min-width: 1280px) {
+  .main-content {
+    padding: 2rem; 
+  }
+
+  .sidebar {
+    font-size: 1.2rem;
+  }
+}

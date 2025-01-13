@@ -1,0 +1,36 @@
+.sidebar {
+  width: 200px;
+  background-color: #f8f8f8;
+  color: #333;
+  height: 100vh;
+  position: fixed;
+  padding: 1rem;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar a {
+  display: block;
+  color: #333;
+  text-decoration: none;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+.sidebar a:hover {
+  background-color: #e0e0e0;
+  color: #000;
+}
+
+/* Estilo do link ativo */
+.sidebar a.active {
+  color: #0000ff; /* Cor azul para o link ativo */
+  font-weight: bold;
+  background-color: #dceffd; /* Fundo azul claro */
+}
