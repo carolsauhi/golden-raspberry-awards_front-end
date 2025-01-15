@@ -1,6 +1,6 @@
 # **Projeto Angular CLI - Dashboard e Movie List**
 
-Este projeto foi desenvolvido em Angular CLI para criar uma aplicação interativa com dois componentes principais: **Dashboard** e **Movie List**. Ele consome a API pública `https://challenge.outsera.tech/movies` para exibir informações sobre filmes e seus vencedores.
+Este projeto foi desenvolvido em Angular CLI para criar uma aplicação interativa com dois componentes principais: **Dashboard** e **Movie List**. Ele consome a API pública `https://challenge.outsera.tech/api/movies` para exibir informações sobre filmes e seus vencedores.
 
 ## **Funcionalidades**
 
@@ -25,7 +25,7 @@ Este projeto foi desenvolvido em Angular CLI para criar uma aplicação interati
 - **Angular CLI**: Framework para desenvolvimento frontend.
 - **TypeScript**: Linguagem principal para a lógica da aplicação.
 - **Bootstrap** (opcional): Para estilos adicionais.
-- **API HTTP**: Conexão com a API `https://challenge.outsera.tech/movies`.
+- **API HTTP**: Conexão com a API `https://challenge.outsera.tech/api/movies`.
 
 ---
 
@@ -94,11 +94,11 @@ src/
 
 ## **Uso da API**
 
-O projeto consome a API `https://challenge.outsera.tech/movies` para obter os dados. As principais funcionalidades são:
+O projeto consome a API `https://challenge.outsera.tech/api/movies` para obter os dados. As principais funcionalidades são:
 
 ### **Endpoints Utilizados**
 1. **Todos os filmes**:
-   - Endpoint: `https://challenge.outsera.tech/movies`
+   - Endpoint: `https://challenge.outsera.tech/api/movies`
    - Método: `GET`
 
 2. **Anos com múltiplos vencedores**:

@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule, FormsModule],
 })
 export class DashboardComponent implements OnInit {
-  apiUrl: string = 'https://challenge.outsera.tech/api/movies';
+  private apiUrl: string = 'https://challenge.outsera.tech/api/movies';
 
   allMovies: any[] = [];
 

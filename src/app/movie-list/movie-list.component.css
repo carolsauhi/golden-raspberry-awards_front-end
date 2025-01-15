@@ -1,50 +1,120 @@
-/* Centraliza o conteúdo */
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin: 0;
-  min-height: 100vh; /* Garante que o conteúdo preencha a altura da janela */
-  font-family: 'Arial', sans-serif;
-  background-color: #f4f4f4; /* Fundo suave */
-}
-
-/* Contêiner principal */
+/* Contêiner principal da tabela */
 .movie-list-container {
-  width: 90%;
-  max-width: 1200px; /* Limita a largura máxima */
-  margin: 20px auto;
-  padding: 20px;
+  margin: 0;
+  padding: 0.5px;
+  width: 100%;
+  max-width: 1200px;
   background-color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  /* overflow-x: auto;  */
+  box-sizing: border-box;
 }
 
-/* Tabela */
+/* Tabela de filmes */
 .movie-list-table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
-th, td {
-  padding: 8px;
+.movie-list-table th,
+.movie-list-table td {
+  padding: 10px;
   border: 1px solid #ddd;
-  text-align: left;
+  text-align: center;
+  /* Centraliza o texto na tabela */
+  font-size: 12px;
+  /* Ajusta o tamanho da fonte */
 }
 
-th {
-  background-color: #f2f2f2;
+.movie-list-table th {
+  background-color: #f8f9fa;
   font-weight: bold;
 }
 
-/* Campo de filtro */
-.filter-input, .filter-select {
-  width: 100%;
+/* Estilo dos campos de filtro */
+.filters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.filter-input,
+.filter-select {
   padding: 8px;
-  margin-top: 5px;
   font-size: 14px;
   border: 1px solid #ddd;
   border-radius: 4px;
+  width: 45%;
+  /* Ajusta o tamanho dos filtros */
+  box-sizing: border-box;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  gap: 5px;
+}
+
+.pagination button {
+  padding: 5px 10px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #f4f4f4;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.pagination button.active {
+  background-color: #007bff;
+  color: #fff;
+  font-weight: bold;
+  border-color: #0056b3;
+}
+
+.pagination button[disabled] {
+  background-color: #e0e0e0;
+  color: #aaa;
+  cursor: not-allowed;
+}
+
+.pagination button:hover:not([disabled]):not(.active) {
+  background-color: #dceffd;
+  color: #0056b3;
+}
+
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+  .movie-list-container {
+    padding: 10px;
+  }
+
+  .movie-list-table th,
+  .movie-list-table td {
+    font-size: 12px;
+    /* Reduz tamanho da fonte em telas menores */
+    padding: 8px;
+  }
+
+  .filters {
+    flex-direction: column;
+    /* Coloca filtros em coluna */
+    gap: 10px;
+  }
+
+  .filter-input,
+  .filter-select {
+    width: 100%;
+  }
+
+  .pagination {
+    flex-direction: column;
+    /* Ajusta paginação para coluna */
+    gap: 10px;
+  }
 }

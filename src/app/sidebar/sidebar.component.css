@@ -1,18 +1,23 @@
+/* Estilo geral da barra lateral */
 .sidebar {
-  width: 200px;
+  width: 120px;
   background-color: #f8f8f8;
-  color: #333;
-  height: 100vh;
-  position: fixed;
+  height: calc(100vh - 60px); /* Altura responsiva */
+  position: sticky;
+  top: 0; /* Garante que fique fixada no topo */
   padding: 1rem;
+  overflow-y: auto; /* Adiciona scroll para conteúdo maior que a altura */
+  box-sizing: border-box;
 }
 
+/* Estilo da lista */
 .sidebar ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
 
+/* Links padrão */
 .sidebar a {
   display: block;
   color: #333;
@@ -23,14 +28,42 @@
   transition: color 0.3s, background-color 0.3s;
 }
 
+/* Hover nos links */
 .sidebar a:hover {
   background-color: #e0e0e0;
   color: #000;
 }
 
-/* Estilo do link ativo */
+/* Link ativo */
 .sidebar a.active {
-  color: #0000ff; /* Cor azul para o link ativo */
-  font-weight: bold;
+  color: #0000ff; /* Cor azul */
+  font-weight: bold; /* Negrito */
   background-color: #dceffd; /* Fundo azul claro */
+}
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+  .sidebar {
+    width: 100%; /* Largura total em telas menores */
+    height: auto; /* Altura ajustável */
+    position: relative; /* Removida fixação */
+  }
+
+  .sidebar ul {
+    display: flex; /* Transforma em barra horizontal */
+    justify-content: space-around;
+    padding: 0.5rem 0;
+  }
+
+  .sidebar a {
+    padding: 0.5rem 1rem;
+    margin: 0;
+    font-size: 14px; /* Ajusta o tamanho da fonte */
+  }
+
+  .sidebar a.active {
+    font-weight: bold;
+    color: #0000ff;
+    background-color: transparent; /* Remove o fundo em telas menores */
+  }
 }

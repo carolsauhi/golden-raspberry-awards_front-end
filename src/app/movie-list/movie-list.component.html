@@ -1,66 +1,59 @@
 <div class="movie-list-container">
-  <h2>List of Movies</h2>
+  <h2>Movies List</h2>
 
-  <!-- Verifica se há filmes carregados -->
+  <!-- Mensagem de atenção -->
+  <div *ngIf="showNoResultsMessage" class="no-results">
+    No movies found for the selected Year filter.
+  </div>
+
+  <!-- Tabela de filmes -->
   <table *ngIf="filteredMovies.length > 0" class="movie-list-table">
     <thead>
       <tr>
         <th>ID</th>
-        <th>
-          Year
+        <th>Year
           <br />
-          <input
-            type="text"
-            [(ngModel)]="yearFilter"
-            (input)="applyFilters()"
-            placeholder="Filter by year"
-            class="filter-input"
-          />
+          <input type="text" [(ngModel)]="yearFilter" (input)="applyFilters()" placeholder="Filter by year"
+            class="filter-input" />
         </th>
         <th>Title</th>
-        <th>Studios</th>
-        <th>Producers</th>
-        <th>
-          Winner?
+        <th>Winner ?
           <br />
-          <select
-            [(ngModel)]="winnerFilter"
-            (change)="applyFilters()"
-            class="filter-select"
-          >
+          <select [(ngModel)]="winnerFilter" (change)="applyFilters()" class="filter-select">
             <option value="">All</option>
-            <option value="yes">Yes</option>
-            <option value="no">No</option>
+            <option value=true>Yes</option>
+            <option value=false>No</option>
           </select>
         </th>
       </tr>
     </thead>
     <tbody>
-      <!-- Renderiza os filmes na tabela -->
-      <tr *ngFor="let movie of getPaginatedMovies(); let index = index">
-        <td>{{ index + 1 }}</td> 
+      <tr *ngFor="let movie of movies; let i = index">
+        <td>{{ (currentPage - 1) * pageSize + i + 1 }}</td>
         <td>{{ movie.year }}</td>
         <td>{{ movie.title }}</td>
-        <td>{{ movie.studios.join(', ') }}</td>
-        <td>{{ movie.producers.join(', ') }}</td>
         <td>{{ movie.winner ? 'Yes' : 'No' }}</td>
       </tr>
     </tbody>
   </table>
 
-  <!-- Mensagem para quando não houver filmes -->
-  <div *ngIf="filteredMovies.length === 0">
-    No movies to display.
-  </div>
-
   <!-- Paginação -->
-  <div class="pagination" *ngIf="filteredMovies.length > itemsPerPage">
-    <button
-      *ngFor="let page of getTotalPages()"
-      (click)="changePage(page)"
-      [class.active]="page === currentPage"
-    >
+  <div class="pagination">
+    <button (click)="goToFirstPage()" [disabled]="currentPage === 1">
+      «
+    </button>
+    <button (click)="previousPage()" [disabled]="currentPage === 1">
+      ‹
+    </button>
+    <button *ngFor="let page of getPaginationRange()" (click)="goToPage(page)" [class.active]="page === currentPage">
       {{ page }}
     </button>
+    <button (click)="nextPage()" [disabled]="currentPage === totalPages">
+      ›
+    </button>
+    <button (click)="goToLastPage()" [disabled]="currentPage === totalPages">
+      »
+    </button>
   </div>
+
 </div>

@@ -21,7 +21,7 @@ export class MovieListComponent implements OnInit {
   totalPages: number = 0; // Total de páginas
   showNoResultsMessage: boolean = false; // Controle para exibir a mensagem de atenção
 
-  apiUrl: string = 'https://challenge.outsera.tech/api/movies'; // URL da API
+  private apiUrl: string = 'https://challenge.outsera.tech/api/movies'; // URL da API
 
   constructor(private http: HttpClient) { }
 
@@ -63,13 +63,12 @@ export class MovieListComponent implements OnInit {
   }
 
   applyFilters(): void {
-    
-    this.currentPage = 1; // Reseta para a primeira página ao aplicar filtros
+    // Reseta para a primeira página ao aplicar filtros
+    this.currentPage = 1;
 
     // Verifica se o filtro de ano tem 4 caracteres
     if (this.yearFilter.length === 4 || this.yearFilter === '') {
       this.fetchMovies();
-      
     } else {
       this.showNoResultsMessage = false; // Não exibe mensagem enquanto o ano não for válido
     }
