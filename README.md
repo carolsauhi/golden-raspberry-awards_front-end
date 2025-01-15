@@ -1,4 +1,4 @@
-# **Golden Raspberry Awards **
+# **Projeto Angular CLI - Dashboard e Movie List**
 
 Este projeto foi desenvolvido em Angular CLI para criar uma aplicação interativa com dois componentes principais: **Dashboard** e **Movie List**. Ele consome a API pública `https://challenge.outsera.tech/api/movies` para exibir informações sobre filmes e seus vencedores.
 
@@ -96,16 +96,22 @@ src/
 
 O projeto consome a API `https://challenge.outsera.tech/api/movies` para obter os dados. As principais funcionalidades são:
 
-<<<<<<< HEAD
 ### **Endpoints Utilizados**
 1. **Todos os filmes**:
    - Endpoint: `https://challenge.outsera.tech/api/movies`
-=======
-### **Endpoint Utilizado**
-**Todos os filmes**:
-   - Endpoint: `https://challenge.outsera.tech/movies`
->>>>>>> ca65d5e1ff9244c9e993df08999f9823901bc60c
    - Método: `GET`
+
+2. **Anos com múltiplos vencedores**:
+   - Parâmetro: `?projection=years-with-multiple-winners`
+
+3. **Top 3 estúdios com mais vitórias**:
+   - Parâmetro: `?projection=studios-with-win-count`
+
+4. **Produtores com maior e menor intervalo entre vitórias**:
+   - Parâmetro: `?projection=max-min-win-interval-for-producers`
+
+5. **Filtragem por vencedor e ano**:
+   - Parâmetros: `?winner=true&year=<ANO>`
 
 ---
 
